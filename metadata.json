@@ -1,0 +1,6 @@
+{
+  "name": "Mi Registro de Lectura",
+  "description": "Aplicación web móvil para la gestión personal de libros, desafíos mensuales de lectura y categorías con porcentaje de avance, lista de deseos y estadísticas.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

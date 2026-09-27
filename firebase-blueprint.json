@@ -1,0 +1,99 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "avatar": { "type": "string" },
+        "theme": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    },
+    "Book": {
+      "title": "Book",
+      "description": "A book registered in user's library",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "coverImage": { "type": "string" },
+        "coverColor": { "type": "string" },
+        "totalPages": { "type": "number" },
+        "currentPage": { "type": "number" },
+        "format": { "type": "string" },
+        "category": { "type": "string" },
+        "genres": { "type": "array" },
+        "description": { "type": "string" },
+        "saga": { "type": "string" },
+        "rating": { "type": "number" },
+        "status": { "type": "string" },
+        "startDate": { "type": "string" },
+        "endDate": { "type": "string" },
+        "readYear": { "type": "number" },
+        "readingDays": { "type": "number" },
+        "chapters": { "type": "array" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "title", "totalPages", "currentPage", "status"]
+    },
+    "WishlistItem": {
+      "title": "WishlistItem",
+      "description": "A book wish item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "coverImage": { "type": "string" },
+        "coverColor": { "type": "string" },
+        "category": { "type": "string" },
+        "intent": { "type": "string" },
+        "priority": { "type": "string" },
+        "estimatedPrice": { "type": "number" },
+        "offerPrice": { "type": "number" },
+        "currency": { "type": "string" },
+        "storeName": { "type": "string" },
+        "storeUrl": { "type": "string" },
+        "notes": { "type": "string" },
+        "totalPages": { "type": "number" },
+        "format": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "title"]
+    },
+    "Challenge": {
+      "title": "Challenge",
+      "description": "Monthly or annual reading challenge",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "year": { "type": "number" },
+        "updatedAt": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile and main settings"
+    },
+    "/users/{userId}/books/{bookId}": {
+      "schema": "Book",
+      "description": "Books in user library"
+    },
+    "/users/{userId}/wishlist/{wishId}": {
+      "schema": "WishlistItem",
+      "description": "Wishlist items"
+    },
+    "/users/{userId}/challenges/{challengeId}": {
+      "schema": "Challenge",
+      "description": "Reading challenges and annual plans"
+    }
+  }
+}
